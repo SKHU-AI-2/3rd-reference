@@ -17,8 +17,8 @@ mask = cv2.inRange(hsv, lower_white, upper_white)
 
 kernel = np.ones((5, 5), np.uint8)
 
-mask_cleaned = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)  # 열림(작은 흰색 점 제거)
-mask_cleaned_2 = cv2.morphologyEx(mask_cleaned, cv2.MORPH_OPEN, kernel)  # 닫힘(작은 검은색 구멍 채우기)
+mask_cleaned = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)  # 열림(작은 흰색 점 제거)
+mask_cleaned_2 = cv2.morphologyEx(mask_cleaned, cv2.MORPH_CLOSE, kernel)  # 닫힘(작은 검은색 구멍 채우기)
 
 
 
